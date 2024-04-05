@@ -1,1 +1,2 @@
-class Kitoblar
+class Kitoblar:
+    pass
