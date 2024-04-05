@@ -23,6 +23,11 @@ if InputNumber == 1:
         
             for i in kitoblar_royxati:
                 print(i.strip().split())
+            
+
+if InputNumber == 2:
+    with open('kitoblar.txt', 'r+') as kitoblar_royxati:
+        with open("bandkitoblar.txt", "a+") as bandkitoblar:
             kitoblar_royxati.seek(0)
             a = input()
             if a in kitoblar_royxati.read():
@@ -51,8 +56,8 @@ if InputNumber == 4:
     ismlar = []
     with open("kitobxonlar.txt", "r") as kitobxonlar:
         for i in kitobxonlar:
-            if i.isalpha:
-                print(i.strip("{").split())
+            i = i.split(" ")
+            print(i[0])
 
 #kitobxon qoshish        
 if InputNumber == 5:
@@ -60,18 +65,21 @@ if InputNumber == 5:
         new_kitobxon = input("Isminggizni kiriting : ")
         if new_kitobxon not in kitobxonlar:
             kitobxonlar.write("\n")
-            
             print("Isminggiz royxatga qo'shildi!")
-            id = random.randint(1000,9999)
-            if id not in kitobxonlar:
-                royxat = dict()
-                royxat[id] = new_kitobxon
-            else:
-                id = random.randint(1000,9999)
-                royxat = dict()
-                royxat[id] = new_kitobxon
-                royxat.pop(1)
-                royxat.pop(-1)
-            kitobxonlar.write(str(royxat))
+            id = random.randint(1000,9999) 
+            kitobxonlar.write(new_kitobxon + " ")   
+            kitobxonlar.write(str(id))
+
+#kitob qoshish
+if InputNumber == 6:
+    new_book_name = input("Kitob nomini kiriting : ")
+    new_book_autor = input("Muallifni kiriting : ")
+    new_book_id = str(random.randint(1000,9999))
+    with open("Kitoblar.txt", "a+") as new_book:
+        new_book.write("\n")
+        new_book.write(str(new_book_name) + " ")
+        new_book.write(str(new_book_autor) + " ")
+        new_book.write(new_book_id)
         
-        
+if InputNumber == 7:
+    print("Tashrifinggiz uchun rahmat!\nSog' bo'ling!")
