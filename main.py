@@ -46,21 +46,32 @@ if InputNumber == 3:
                     print("Kitob qaytarib berildi!")
         else:
             print("Kitob topilmadi!")
-
-if  InputNumber == 4:
-    with open("kitobxonlar.txt","r") as kitobxonlar:
+#kitobxonlar royxati
+if InputNumber == 4:
+    ismlar = []
+    with open("kitobxonlar.txt", "r") as kitobxonlar:
         for i in kitobxonlar:
-            print(i, end="")
-            
+            if i.isalpha:
+                print(i.strip("{").split())
+
+#kitobxon qoshish        
 if InputNumber == 5:
     with open("kitobxonlar.txt","a+") as kitobxonlar:
         new_kitobxon = input("Isminggizni kiriting : ")
         if new_kitobxon not in kitobxonlar:
             kitobxonlar.write("\n")
-            kitobxonlar.write(new_kitobxon)
+            
             print("Isminggiz royxatga qo'shildi!")
-        else: 
-            print("Bu royxatda bor!")
-        
+            id = random.randint(1000,9999)
+            if id not in kitobxonlar:
+                royxat = dict()
+                royxat[id] = new_kitobxon
+            else:
+                id = random.randint(1000,9999)
+                royxat = dict()
+                royxat[id] = new_kitobxon
+                royxat.pop(1)
+                royxat.pop(-1)
+            kitobxonlar.write(str(royxat))
         
         

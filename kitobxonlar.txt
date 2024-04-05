@@ -1,4 +1,9 @@
-bekzod 1337
-abduazim
-asrorroziboy
-roziboy
+{7209: 'abduazim'}
+{7209: 'abduazim'}
+{7209: 'abduazim'}
+{7209: 'abduazim'}
+{7209: 'abduazim'}
+{7209: 'abduazim'}
+{4396: 'bekzod'}
+{9829: 'bekzodddd'}
+
