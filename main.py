@@ -16,8 +16,8 @@ if InputNumber == 1:
         kitoblar_royxati.seek(0)
         for i in kitoblar_royxati:
             print(i.strip().split())
+            
         a = input()
-        
         if a in kitoblar_royxati.read():
             print("Success")
         
