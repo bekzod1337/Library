@@ -1,3 +1,5 @@
+import random
+
 class KitobQoshish:
     def Kitob_Qoshish():
         new_book_name = input("Kitob nomini kiriting : ")
